@@ -19,29 +19,28 @@ import javax.persistence.ManyToMany;
 
 import lombok.Data;
 
-/**
- *
- * @author Peter_Olah2
- */
-//@Data
+
+// @Data
 @Entity
 public class User {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
 
-    private String firstname;
-    private String lastname;
-    private String username;
-    private String password;
-    private String email;
-    @Column(columnDefinition="tinyint(1) default 1")
-    private boolean enabled;
+	private String firstname;
+	private String lastname;
+	@Column(unique = true)
+	private String username;
+	private String password;
+	@Column(unique = true)
+	private String email;
+	@Column(columnDefinition = "tinyint(1) default 1")
+	private boolean enabled;
 
-    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-    @JoinTable(joinColumns = @JoinColumn(name = "user_id"),inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles;
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private Set<Role> roles;
 
 	public String getFirstname() {
 		return firstname;
@@ -102,7 +101,5 @@ public class User {
 	public long getId() {
 		return id;
 	}
-    
-    
-   
+
 }

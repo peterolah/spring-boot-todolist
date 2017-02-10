@@ -5,9 +5,8 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.example.todolist.entities.User;
 
-//@RepositoryRestResource(collectionResourceRel = "users", path = "users")
 public interface UserRepository extends JpaRepository<User, Long> {
 
-	
+	User findByUsername(final String username);
 
 }

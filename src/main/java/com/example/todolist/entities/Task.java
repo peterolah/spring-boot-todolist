@@ -23,6 +23,12 @@ public class Task {
 	private Date createdAt;
 	private String name;
 	private String description;
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	private Date dueDate;
 	@Column(columnDefinition="tinyint(1) default 0")
 	private boolean completed;
