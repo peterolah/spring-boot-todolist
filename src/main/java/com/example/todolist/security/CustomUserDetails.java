@@ -68,4 +68,12 @@ public class CustomUserDetails implements UserDetails  {
 		return user.isEnabled();
 	}
 
+
+
+	public long getId() {
+		return user.getId();
+	}
+	
+	
+
 }

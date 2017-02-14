@@ -17,6 +17,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 
 
@@ -32,6 +34,7 @@ public class User {
 	private String lastname;
 	@Column(unique = true)
 	private String username;
+	@JsonIgnore
 	private String password;
 	@Column(unique = true)
 	private String email;

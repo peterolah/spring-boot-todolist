@@ -28,6 +28,22 @@ public class Role {
     private long id;
     private String name;
     
+    
+    
+    
+	public Role() {
+		super();
+	}
+	
+	
+	
+	public Role(String name) {
+		super();
+		this.name = name;
+	}
+
+
+
 	public String getName() {
 		return name;
 	}
@@ -37,6 +53,8 @@ public class Role {
 	public long getId() {
 		return id;
 	}
+	
+	
 
     
 
